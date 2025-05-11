@@ -1,3 +1,4 @@
+import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -15,6 +16,11 @@ const routes: Routes = [
         .then((m) => m.MyFeatureModule)
         .catch((err) => console.error('Error lazy loading mfe1', err)),
   },
+  {
+    path:"payment",
+    module:import('mfe1/payment')
+    .then((m) => m.PaymentComponent).catch((err)=> console.log(`Error lazy loaded`))
+  }
 ];
 
 @NgModule({

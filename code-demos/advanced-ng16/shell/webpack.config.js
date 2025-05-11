@@ -5,7 +5,8 @@ const {
 
 module.exports = withModuleFederationPlugin({
   remotes: {
-    // no need to declare remotes as they are dynamically loaded.
+    checkout: `checkout@http://localhost:4201/remoteEntry.js?v=${new Date().getTime()}`,
+    payment: "payment@http://localhost:5002/remoteEntry.js"
   },
   shared: {
     ...shareAll({

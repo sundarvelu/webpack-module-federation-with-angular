@@ -42,7 +42,7 @@ export class CheckoutComponent implements OnInit {
       id: CheckoutComponent.name,
       type: 'module',
       exposedModule: './checkout',
-      remoteEntry: 'http://localhost:4201/remoteEntry.js',
+      remoteEntry: `http://localhost:4201/remoteEntry.js?v=${new Date().getTime()}`,
     };
     const result = await this._remoteModuleService.loadAsync(loadRemoteModuleOptions);
     switch (result.type) {

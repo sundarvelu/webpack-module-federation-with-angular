@@ -5,7 +5,8 @@ const {
 
 const webpackConfig = withModuleFederationPlugin({
   remotes: {
-    mfe1: "http://localhost:4201/remoteEntry.js",
+    mfe1: `mfe1@http://localhost:4201/remoteEntry.js?${new Date().getTime()}`,
+    // mfe1: "mfe1@http://localhost:4201/remoteEntry.js"
   },
   shared: {
     ...shareAll({
